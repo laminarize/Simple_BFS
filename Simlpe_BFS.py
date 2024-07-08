@@ -18,7 +18,7 @@ def bfs(graph, start_node, visited=set(), traversal_order=list()):
     if start_node not in visited:
         traversal_order.append(start_node)
         visited.add(start_node)
-        for nodes in graph[start_node]:
+        for nodes in graph.get(start_node, []):
             traversal_order.append(nodes)
             queue.append(nodes)
             print(traversal_order)
